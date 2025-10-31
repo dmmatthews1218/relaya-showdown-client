@@ -3971,6 +3971,61 @@ export const BattleMoveAnims: AnimTable = {
 		},
 		prepareAnim: BattleOtherAnims.chargestatus.anim,
 	},
+    // Custom NCSU Move
+    strengthofthewolf: {
+		anim(scene, [attacker]) {
+			scene.backgroundEffect('#000000', 700, 0.3);
+			scene.showEffect('rainbow', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 0,
+			}, {
+				scale: 2,
+				opacity: 0,
+				time: 500,
+			}, 'decel', 'fade');
+			scene.showEffect('mistball', {
+				x: attacker.x + 40,
+				y: attacker.y - 40,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 0,
+			}, {
+				y: attacker.y + 130,
+				opacity: 0,
+				time: 400,
+			}, 'accel');
+			scene.showEffect('electroball', {
+				x: attacker.x - 40,
+				y: attacker.y - 40,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 200,
+			}, {
+				y: attacker.y + 130,
+				opacity: 0,
+				time: 600,
+			}, 'accel');
+			scene.showEffect('energyball', {
+				x: attacker.x,
+				y: attacker.y - 40,
+				z: attacker.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 400,
+			}, {
+				y: attacker.y + 130,
+				opacity: 0,
+				time: 800,
+			}, 'accel');
+		},
+		prepareAnim: BattleOtherAnims.chargestatus.anim,
+	},
 	magnetrise: {
 		anim(scene, [attacker]) {
 			scene.showEffect('wisp', {
@@ -4015,6 +4070,36 @@ export const BattleMoveAnims: AnimTable = {
 		anim() {},
 	},
 	batonpass: {
+		anim(scene, [attacker]) {
+			scene.showEffect('wisp', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 1,
+				opacity: 1,
+			}, {
+				x: attacker.x,
+				y: attacker.y + 100,
+				z: attacker.z,
+				opacity: 0.1,
+				time: 200,
+			}, 'accel');
+			scene.showEffect('wisp', {
+				x: attacker.x,
+				y: attacker.y + 100,
+				z: attacker.z,
+				scale: 1,
+				opacity: 0.1,
+				time: 200,
+			}, {
+				scale: 4,
+				opacity: 1,
+				time: 400,
+			}, 'linear', 'explode');
+		},
+	},
+    // Custom NCSU Move
+    powerofthepack: {
 		anim(scene, [attacker]) {
 			scene.showEffect('wisp', {
 				x: attacker.x,
