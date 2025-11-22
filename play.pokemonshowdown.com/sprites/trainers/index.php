@@ -16,6 +16,7 @@ function dirindex_sprites() {
 }
 
 $sprite_credits = [
+    "brickyard-preacher.png" => "Club",
 	"acerola.png" => "Beliot419",
 	"aetheremployee.png" => "Beliot419",
 	"aetheremployeef.png" => "Beliot419",
